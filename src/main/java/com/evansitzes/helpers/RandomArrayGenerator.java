@@ -1,4 +1,4 @@
-package com.evansitzes;
+package com.evansitzes.helpers;
 
 import java.util.Random;
 
@@ -7,17 +7,14 @@ import java.util.Random;
  */
 public class RandomArrayGenerator {
 
-    private static final int MAX_INT_SIZE = 99;
-
-    public static int[] generateArray(final int arraySize) {
+    public static int[] generateArray(final int arraySize, final int maxValue) {
         final int[] array = new int[arraySize];
         final Random rand = new Random();
 
         for (int i = 0; i < arraySize; i++) {
-            array[i] = rand.nextInt(MAX_INT_SIZE) + 1;
+            array[i] = rand.nextInt(maxValue) + 1;
         }
 
         return array;
     }
-
 }
