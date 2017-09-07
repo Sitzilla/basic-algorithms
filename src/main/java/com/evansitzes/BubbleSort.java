@@ -5,7 +5,7 @@ import com.evansitzes.helpers.TimekeeperHelper;
 
 import java.util.Arrays;
 
-/**
+/*
  Iterates through the array n times, constantly swapping the lower and higher of two numbers.  The highest numbers
  'bubble' to the top.  Must maintain index of the last-sorted highest number.
  Best case: O(n) (if an already sorted list)
