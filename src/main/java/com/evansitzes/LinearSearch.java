@@ -14,7 +14,6 @@ public class LinearSearch {
     private static final int TARGET = 42;
 
     public static void main(final String[] args) {
-
         final int[] unsortedBasicArray = RandomArrayGenerator.generateArray(RANDOM_ARRAY_SIZE, MAX_VALUE);
         final TimekeeperHelper timekeeper = new TimekeeperHelper();
 

@@ -7,6 +7,19 @@ import java.util.Random;
  */
 public class RandomArrayGenerator {
 
+    private static final int MAX_VALUE = 100;
+
+    public static int[] generateArray(final int arraySize) {
+        final int[] array = new int[arraySize];
+        final Random rand = new Random();
+
+        for (int i = 0; i < arraySize; i++) {
+            array[i] = rand.nextInt(MAX_VALUE) + 1;
+        }
+
+        return array;
+    }
+
     public static int[] generateArray(final int arraySize, final int maxValue) {
         final int[] array = new int[arraySize];
         final Random rand = new Random();

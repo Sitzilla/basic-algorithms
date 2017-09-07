@@ -1,5 +1,10 @@
 package com.evansitzes;
 
+import com.evansitzes.helpers.RandomArrayGenerator;
+import com.evansitzes.helpers.TimekeeperHelper;
+
+import java.util.Arrays;
+
 /**
  * Divide and conquer algorithm that sorts an array by partitioning recursion.
  * Note: while quicksort has the same average big-O runtime as mergesort, in practice it tends to outperform mergesort.
@@ -9,10 +14,23 @@ package com.evansitzes;
  */
 public class QuickSort {
 
+    private static final int RANDOM_ARRAY_SIZE = 100;
     private int[] array;
 
-    public int[] sort(final int[] array) {
-        this.array = array;
+    public static void main(final String[] args) {
+        final int[] unsortedSelectionArray = RandomArrayGenerator.generateArray(RANDOM_ARRAY_SIZE);
+        System.out.println("Sorting array with Selection Sort: " + Arrays.toString(unsortedSelectionArray));
+        final TimekeeperHelper timekeeper = new TimekeeperHelper();
+
+        final int[] sortedSelectionArray = new QuickSort().sort(unsortedSelectionArray);
+        timekeeper.endTimekeeping();
+
+        System.out.println("Sorted array: " + Arrays.toString(sortedSelectionArray));
+    }
+
+
+    private int[] sort(final int[] unsortedArray) {
+        this.array = unsortedArray;
         final int low = 0;
         final int high = array.length - 1;
 
@@ -20,7 +38,7 @@ public class QuickSort {
         return array;
     }
 
-    public void quickSort(final int lowIndex, final int highIndex) {
+    private void quickSort(final int lowIndex, final int highIndex) {
         int i = lowIndex;
         int j = highIndex;
 
@@ -58,7 +76,7 @@ public class QuickSort {
 
     }
 
-    private final void exchangeNumbers(final int i, final int j) {
+    private void exchangeNumbers(final int i, final int j) {
         final int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
