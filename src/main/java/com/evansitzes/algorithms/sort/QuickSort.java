@@ -1,4 +1,4 @@
-package com.evansitzes;
+package com.evansitzes.algorithms.sort;
 
 import com.evansitzes.helpers.RandomArrayGenerator;
 import com.evansitzes.helpers.TimekeeperHelper;
